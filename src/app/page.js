@@ -1,7 +1,6 @@
 "use client";
 import HeroMain from "./(hero-ui)/hero-main/page";
 import HeroSubMain from "./(hero-ui)/hero-submain/page";
-import { Products_Card } from "./(products-ui)/products-card/page";
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
