@@ -12,26 +12,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Image from "next/image";
 
 export default function Home() {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("https://dummyjson.com/products");
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const responseData = await response.json();
-        setData(responseData.products);
-        console.log(responseData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, []);
-
+  const [data, setData] = useState([
+    { id: "1" },
+    { id: "2" },
+    { id: "3" },
+    { id: "4" },
+    { id: "5" },
+    { id: "6" },
+    { id: "7" },
+    { id: "8" },
+  ]);
   function HandleCard() {
     return (
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 gap-6 grid-cols-1 sm:grid-cols-2 ">
@@ -41,13 +34,16 @@ export default function Home() {
             key={item.id}
           >
             {/* <img src='/cew-mainlogo.png' className=" object-fill " /> */}
-            <img
+            <Image
+              alt="Product Image"
               src="/product2.PNG"
+              width={300}
+              height={300}
               className="h-[40%] object-cover w-[100%] rounded-tr-sm rounded-tl-sm  "
             />
             <CardHeader className="mt-2">
               <CardTitle className="text-[1rem]">
-                CORRUGATED STAINLESS STEEL 
+                CORRUGATED STAINLESS STEEL
               </CardTitle>
               <CardDescription>
                 CORRUGATED STAINLESS STEEL HOSE WITH BRAID: A 100 SERIES & A 200

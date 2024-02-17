@@ -14,7 +14,9 @@ export default function Products_Nav() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem key="products-menu-item">
-          <NavigationMenuTrigger className='bg-offwhite text-[1rem] hover:text-newgold '>Products</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="bg-offwhite text-[1rem] hover:text-newgold ">
+            Products
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">

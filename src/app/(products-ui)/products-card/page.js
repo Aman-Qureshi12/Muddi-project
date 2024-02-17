@@ -9,13 +9,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Image from "next/image";
 
 export function Products_Card({id,title,description,brand,thumb}) {
   
   return (
     <Card className="w-[300px] h-[400px] rounded-sm hover:shadow-xl  bg-offwhite " key={id}>
-      {/* <img src='/cew-mainlogo.png' className=" object-fill " /> */}
-      <img src='/product2.PNG' className="h-[40%] object-cover w-[100%] rounded-tr-sm rounded-tl-sm  " />
+      <Image alt="" height={300} width={300} src='/product2.PNG' className="h-[40%] object-cover w-[100%] rounded-tr-sm rounded-tl-sm  " />
       <CardHeader className='mt-2'>
         <CardTitle className='text-[1rem]'>CORRUGATED STAINLESS STEEL {id} </CardTitle>
         <CardDescription>CORRUGATED STAINLESS STEEL HOSE WITH BRAID: A 100 SERIES & A 200 SERIES</CardDescription>
