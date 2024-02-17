@@ -31,14 +31,14 @@ export default function Navbar() {
   };
 
   const Links = [
-    { name: "Home", href: "/" },
-    { name: "Products", href: "/products" },
-    { name: "Services", href: "/services" },
-    { name: "Industries", href: "/industries" },
-    { name: "Where to Buy", href: "/industries" },
-    { name: "Quality", href: "/quality" },
-    { name: "About Us", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "Home", href: "/", index:'1' },
+    { name: "Products", href: "/products", index:'2' },
+    { name: "Services", href: "/services", index:'3' },
+    { name: "Industries", href: "/industries", index:'4' },
+    { name: "Where to Buy", href: "/industries", index:'5' },
+    { name: "Quality", href: "/quality", index:'6' },
+    { name: "About Us", href: "/about", index:'7' },
+    { name: "Contact", href: "/contact", index:'8' },
   ];
   function toggleSearch() {
     setIsSearchClicked(!isSearchClicked);
@@ -59,11 +59,11 @@ export default function Navbar() {
           <div className="w-full h-full flex justify-end items-center text-newbrown font-medium border-b-2 border-newgold">
             <span className="mx-4 cursor-pointer">India</span>
             <span className="mx-4">Divisions</span>
-            {Links.slice(4, 7).map((item, index) => (
+            {Links.slice(4, 7).map((item) => (
               <Link
                 href={item.href}
                 className="mx-4 hover:text-newgold"
-                key={index}
+                key={item.index}
               >
                 {item.name}
               </Link>
@@ -84,14 +84,14 @@ export default function Navbar() {
         </div>
         <div className="lg:mx-10 flex flex-col h-[100%] justify-center lg:justify-evenly w-[20%] lg:w-[60%] border-slate-950 sticky top-0">
           <div className=" text-newbrown  font-medium hidden lg:flex lg:items-center ">
-            {Links.slice(0, 4).map((item, index) =>
+            {Links.slice(0, 4).map((item) =>
               item.name === "Products" ? (
-                <Products_Nav />
+                <Products_Nav key={item.index}/>
               ) : (
                 <Link
                   href={item.href}
                   className="mx-4 hover:text-newgold text-center text-[1rem] "
-                  key={index}
+                  key={item.index}
                 >
                   {item.name}
                 </Link>
@@ -131,12 +131,12 @@ export default function Navbar() {
         className={`lg:hidden w-[70vw] h-[100vh] bg-offwhite flex flex-col items-center gap-10 sm:gap-8 py-5 transition-all duration-500`}
         style={styles}
       >
-        {Links.map((item, index) => (
+        {Links.map((item) => (
           <Link
             href={item.href}
             className="mx-4 "
             onClick={() => toggleMenu()}
-            key={index}
+            key={item.index}
           >
             {item.name}
           </Link>

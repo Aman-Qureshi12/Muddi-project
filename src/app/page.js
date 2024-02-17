@@ -3,13 +3,15 @@ import HeroMain from "./(hero-ui)/hero-main/page";
 import HeroSubMain from "./(hero-ui)/hero-submain/page";
 import { Products_Card } from "./(products-ui)/products-card/page";
 import React, { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -33,18 +35,33 @@ export default function Home() {
   function HandleCard() {
     return (
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 gap-6 grid-cols-1 sm:grid-cols-2 ">
-        {data &&
-          data
-            .slice(0, 8)
-            .map((item) => (
-              <Products_Card
-                key={item._id}
-                title={item.title}
-                description={item.description}
-                brand={item.brand}
-                thumb={item.thumbnail}
-              />
-            ))}
+        {data.slice(0, 8).map((item) => (
+          <Card
+            className="w-[300px] h-[400px] rounded-sm hover:shadow-xl  bg-offwhite "
+            key={item.id}
+          >
+            {/* <img src='/cew-mainlogo.png' className=" object-fill " /> */}
+            <img
+              src="/product2.PNG"
+              className="h-[40%] object-cover w-[100%] rounded-tr-sm rounded-tl-sm  "
+            />
+            <CardHeader className="mt-2">
+              <CardTitle className="text-[1rem]">
+                CORRUGATED STAINLESS STEEL 
+              </CardTitle>
+              <CardDescription>
+                CORRUGATED STAINLESS STEEL HOSE WITH BRAID: A 100 SERIES & A 200
+                SERIES
+              </CardDescription>
+            </CardHeader>
+            <CardFooter className="flex justify-center ">
+              {/* <Button variant="link">Cancel</Button> */}
+              <Button variant="goldbtn" className="w-[60%]">
+                Explore
+              </Button>
+            </CardFooter>
+          </Card>
+        ))}
       </div>
     );
   }
@@ -58,9 +75,8 @@ export default function Home() {
         </div>
       </section>
       <section className="h-[100vh] w-full flex justify-center mt-10">
-
         <div className="bg-offwhite w-[80%] lg:w-[50%] h-[80vh] border flex justify-center items-center rounded-md shadow-xl text-gray-700 font-medium">
-        <span>Testimonials Coming soon...!!!</span>
+          <span>Testimonials Coming soon...!!!</span>
         </div>
       </section>
     </main>
