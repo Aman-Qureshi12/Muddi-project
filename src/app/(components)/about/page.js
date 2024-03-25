@@ -1,7 +1,14 @@
-import React from 'react'
+import React from "react";
+import Aboutus from "../../(about-ui)/aboutus";
+import MissionVision from "@/app/(about-ui)/MissionVision";
+import Chooseus from "@/app/(about-ui)/Chooseus";
 
 export default function About() {
   return (
-    <div>About</div>
-  )
+    <main>
+      {/* <Aboutus /> */}
+      <MissionVision />
+      <Chooseus />
+    </main>
+  );
 }

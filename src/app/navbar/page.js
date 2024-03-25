@@ -32,14 +32,14 @@ export default function Navbar() {
   };
 
   const Links = [
-    { name: "Home", href: "/", index:'1' },
-    { name: "Products", href: "/products", index:'2' },
-    { name: "Services", href: "/services", index:'3' },
-    { name: "Industries", href: "/industries", index:'4' },
-    { name: "Where to Buy", href: "/industries", index:'5' },
-    { name: "Quality", href: "/quality", index:'6' },
-    { name: "About Us", href: "/about", index:'7' },
-    { name: "Contact", href: "/contact", index:'8' },
+    { name: "Home", href: "/", index: "1" },
+    { name: "Products", href: "/products", index: "2" },
+    { name: "Services", href: "/services", index: "3" },
+    { name: "Industries", href: "/industries", index: "4" },
+    { name: "Where to Buy", href: "/industries", index: "5" },
+    { name: "Quality", href: "/quality", index: "6" },
+    { name: "About Us", href: "/about", index: "7" },
+    { name: "Contact", href: "/contact", index: "8" },
   ];
   function toggleSearch() {
     setIsSearchClicked(!isSearchClicked);
@@ -74,7 +74,13 @@ export default function Navbar() {
       </section>
       <section className=" flex items-center justify-between xl:justify-center w-[100%] h-[10vh] lg:h-[14vh] lg:pl-10 flex-row lg:border-0 border-b-2 border-newgold">
         <div className="lg:w-[22%] h-[100%] justify-start flex flex-row xl:justify-center items-center w-[80%] ">
-          <Image alt="logo" height={300} width={300} src="/cew-logo.png" className="sm:w-20 w-16" />
+          <Image
+            alt="logo"
+            height={300}
+            width={300}
+            src="/cew-logo.png"
+            className="sm:w-20 w-16"
+          />
           <span className="border border-newgold lg:min-w-[40px] mr-2 lg:mx-2 w-[30px] transform rotate-90"></span>
           <div className="w-80% flex flex-col ">
             <button className="text-center font-semibold sm:text-xl sm:tracking-[1.1rem] tracking-[0.6rem]">
@@ -85,9 +91,9 @@ export default function Navbar() {
         </div>
         <div className="lg:mx-10 flex flex-col h-[100%] justify-center lg:justify-evenly w-[20%] lg:w-[60%] border-slate-950 sticky top-0">
           <div className=" text-newbrown  font-medium hidden lg:flex lg:items-center ">
-            {Links.slice(0, 4).map((item) =>
+            {Links.map((item) =>
               item.name === "Products" ? (
-                <Products_Nav key={item.index}/>
+                <Products_Nav key={item.index} />
               ) : (
                 <Link
                   href={item.href}
